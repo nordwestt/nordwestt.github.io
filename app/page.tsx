@@ -345,7 +345,7 @@ export default function NordWestWebsite() {
       <section className={`py-32 px-6 relative ${isDarkMode ? "text-white" : "text-stone-800"}`}>
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-20 items-center">
-            <div>
+            <div className="relative z-10">
               <h2 className="text-4xl md:text-5xl font-bold mb-8 chromatic-text rgb-glitch">From the Alpine Edge</h2>
               <div className="space-y-6 text-lg leading-relaxed">
                 <p className={isDarkMode ? "text-slate-300" : "text-stone-700"}>
@@ -366,8 +366,8 @@ export default function NordWestWebsite() {
             <div className="relative">
               <div className="w-80 h-80 mx-auto relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-purple-500/20 rounded-full blur-xl" />
-                <div className="relative w-full h-full bg-gradient-to-br from-slate-800 to-slate-700 rounded-full flex items-center justify-center portrait-glow">
-                  <div className="text-6xl">🏔️</div>
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <div className="text-[600px] sm:text-[600px] md:text-[600px] lg:text-[800px]">🏔️</div>
                 </div>
               </div>
             </div>
