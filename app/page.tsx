@@ -172,7 +172,7 @@ export default function NordWestWebsite() {
                     y2={280 - tick * 65} 
                   />
                   <text 
-                    x="30" 
+                    x="20" 
                     y={285 - tick * 65} 
                     fill={isDarkMode ? "#64748b" : "#475569"} 
                     fontSize="12"
@@ -227,7 +227,7 @@ export default function NordWestWebsite() {
             {/* ML Data Points and Trend Lines */}
             <g className="ml-visualization">
               {/* Scatter plot points */}
-              {[
+              {/* {[
                 [100, 200], [200, 150], [300, 180], [400, 120], 
                 [500, 90], [600, 140], [700, 160], [800, 110],
                 [900, 130], [1000, 100], [1100, 120]
@@ -240,7 +240,7 @@ export default function NordWestWebsite() {
                   fill={isDarkMode ? "#4ade80" : "#22c55e"}
                   className="animate-pulse"
                 />
-              ))}
+              ))} */}
 
               {/* Confidence interval area */}
               <path
@@ -306,13 +306,13 @@ export default function NordWestWebsite() {
                 fill="none"
                 className="animate-pulse"
               />
-              <path
+              {/* <path
                 d="M50,260 C300,240 600,220 900,200 S1000,190 1150,180"
                 stroke="url(#circuit)"
                 strokeWidth="1"
                 fill="none"
                 className="animate-pulse"
-              />
+              /> */}
             </g>
           </svg>
         </div>
