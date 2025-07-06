@@ -452,7 +452,7 @@ export default function NordWestWebsite() {
 
                   <div className="flex flex-wrap gap-2 mt-auto">
                     {project.tags.map((tag, tagIndex) => (
-                      <span key={tagIndex} className="px-3 py-1 bg-slate-700/50 text-emerald-400 text-sm rounded-full">
+                      <span key={tagIndex} className={`px-3 py-1 ${isDarkMode ? "bg-slate-700/50 text-emerald-400" : "bg-stone-200 text-emerald-600"} text-sm rounded-full`}>
                         {tag}
                       </span>
                     ))}
@@ -527,9 +527,9 @@ export default function NordWestWebsite() {
             } rounded-2xl backdrop-blur-sm border`}
           >
             <p className={`text-lg leading-relaxed ${isDarkMode ? "text-slate-300" : "text-stone-700"}`}>
-              In the intersection of alpine serenity and technological innovation, we find the clarity to build systems
-              that serve both progress and preservation. Every algorithm we craft, every system we architect, carries
-              the responsibility of our shared future.
+              In the intersection of alpine serenity and technological innovation, I find the clarity to build systems
+              that serve both progress and preservation. Every algorithm I craft, every system I architect, carries
+              a vision of our shared future.
             </p>
           </div>
         </div>
