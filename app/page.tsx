@@ -133,7 +133,7 @@ export default function NordWestWebsite() {
       <section className="relative min-h-screen flex items-center justify-center px-6 pt-24">
         <div className="absolute inset-0 hero-background" />
 
-        {/* SVG Mountains */}
+        {/* ML Mountain Visualization */}
         <div className="absolute bottom-0 left-0 right-0 z-5">
           <svg viewBox="0 0 1200 300" className="w-full h-auto">
             <defs>
@@ -149,49 +149,171 @@ export default function NordWestWebsite() {
                 <stop offset="0%" stopColor={isDarkMode ? "#475569" : "#b8d4b8"} stopOpacity="0.4" />
                 <stop offset="100%" stopColor={isDarkMode ? "#334155" : "#8fbc8f"} stopOpacity="0.5" />
               </linearGradient>
-            </defs>
-
-            {/* Back mountains */}
-            <path
-              d="M0,300 L0,200 L200,100 L400,150 L600,80 L800,120 L1000,90 L1200,140 L1200,300 Z"
-              fill="url(#mountain3)"
-            />
-
-            {/* Middle mountains */}
-            <path
-              d="M0,300 L0,220 L150,120 L350,180 L550,100 L750,160 L950,110 L1200,170 L1200,300 Z"
-              fill="url(#mountain2)"
-            />
-
-            {/* Front mountains */}
-            <path
-              d="M0,300 L0,250 L100,180 L300,220 L500,140 L700,200 L900,160 L1200,210 L1200,300 Z"
-              fill="url(#mountain1)"
-            />
-          </svg>
-        </div>
-
-        {/* Animated Tree */}
-        <div className="absolute bottom-20 left-10 z-10 hidden md:block">
-          <svg width="80" height="120" viewBox="0 0 80 120" className="swaying-tree">
-            <defs>
-              <linearGradient id="trunk" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor={isDarkMode ? "#4a5568" : "#8b7355"} />
-                <stop offset="100%" stopColor={isDarkMode ? "#2d3748" : "#6b5b47"} />
+              <linearGradient id="circuit" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor={isDarkMode ? "#4ade80" : "#22c55e"} stopOpacity="0.3" />
+                <stop offset="100%" stopColor={isDarkMode ? "#818cf8" : "#6366f1"} stopOpacity="0.3" />
               </linearGradient>
-              <radialGradient id="foliage" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor={isDarkMode ? "#38a169" : "#48bb78"} />
-                <stop offset="100%" stopColor={isDarkMode ? "#2f855a" : "#38a169"} />
-              </radialGradient>
             </defs>
 
-            {/* Trunk */}
-            <rect x="35" y="60" width="10" height="60" fill="url(#trunk)" rx="2" />
+            {/* Coordinate Axes */}
+            <g className="coordinate-system" stroke={isDarkMode ? "#475569" : "#94a3b8"} strokeWidth="1">
+              {/* Y-axis */}
+              <line x1="50" y1="280" x2="50" y2="20" strokeWidth="2" />
+              {/* X-axis */}
+              <line x1="50" y1="280" x2="1150" y2="280" strokeWidth="2" />
+              
+              {/* Y-axis ticks and labels */}
+              {[0, 1, 2, 3, 4].map((tick) => (
+                <g key={`y-tick-${tick}`}>
+                  <line 
+                    x1="45" 
+                    y1={280 - tick * 65} 
+                    x2="55" 
+                    y2={280 - tick * 65} 
+                  />
+                  <text 
+                    x="30" 
+                    y={285 - tick * 65} 
+                    fill={isDarkMode ? "#64748b" : "#475569"} 
+                    fontSize="12"
+                  >
+                    {tick * 25}
+                  </text>
+                </g>
+              ))}
 
-            {/* Foliage layers */}
-            <ellipse cx="40" cy="45" rx="25" ry="20" fill="url(#foliage)" opacity="0.8" />
-            <ellipse cx="40" cy="35" rx="20" ry="15" fill="url(#foliage)" opacity="0.9" />
-            <ellipse cx="40" cy="25" rx="15" ry="12" fill="url(#foliage)" />
+              {/* X-axis ticks and labels */}
+              {[0, 1, 2, 3, 4].map((tick) => (
+                <g key={`x-tick-${tick}`}>
+                  <line 
+                    x1={50 + tick * 275} 
+                    y1="275" 
+                    x2={50 + tick * 275} 
+                    y2="285" 
+                  />
+                  <text 
+                    x={45 + tick * 275} 
+                    y="295" 
+                    fill={isDarkMode ? "#64748b" : "#475569"} 
+                    fontSize="12"
+                    textAnchor="middle"
+                  >
+                    {tick * 25}
+                  </text>
+                </g>
+              ))}
+
+              {/* Grid lines */}
+              {[1, 2, 3, 4].map((line) => (
+                <g key={`grid-${line}`} opacity="0.1">
+                  <line 
+                    x1="50" 
+                    y1={280 - line * 65} 
+                    x2="1150" 
+                    y2={280 - line * 65} 
+                    strokeDasharray="4,4"
+                  />
+                  <line 
+                    x1={50 + line * 275} 
+                    y1="20" 
+                    x2={50 + line * 275} 
+                    y2="280" 
+                    strokeDasharray="4,4"
+                  />
+                </g>
+              ))}
+            </g>
+
+            {/* ML Data Points and Trend Lines */}
+            <g className="ml-visualization">
+              {/* Scatter plot points */}
+              {[
+                [100, 200], [200, 150], [300, 180], [400, 120], 
+                [500, 90], [600, 140], [700, 160], [800, 110],
+                [900, 130], [1000, 100], [1100, 120]
+              ].map(([x, y], i) => (
+                <circle 
+                  key={`data-${i}`}
+                  cx={x} 
+                  cy={y} 
+                  r="3" 
+                  fill={isDarkMode ? "#4ade80" : "#22c55e"}
+                  className="animate-pulse"
+                />
+              ))}
+
+              {/* Confidence interval area */}
+              <path
+                d="M100,210 C300,190 700,170 1100,130 L1100,160 C700,200 300,220 100,240 Z"
+                fill={isDarkMode ? "#4ade8020" : "#22c55e20"}
+                className="confidence-area"
+              />
+            </g>
+
+            {/* Mountains as ML Curves */}
+            <g className="mountain-curves">
+              {/* Back mountains */}
+              <path
+                d="M50,280 L50,200 L200,100 L400,150 L600,80 L800,120 L1000,90 L1150,140 L1150,280 Z"
+                fill="url(#mountain3)"
+                className="mountain-curve"
+              />
+
+              {/* Middle mountains */}
+              <path
+                d="M50,280 L50,220 L150,120 L350,180 L550,100 L750,160 L950,110 L1150,170 L1150,280 Z"
+                fill="url(#mountain2)"
+                className="mountain-curve"
+              />
+
+              {/* Front mountains */}
+              <path
+                d="M50,280 L50,250 L100,180 L300,220 L500,140 L700,200 L900,160 L1150,210 L1150,280 Z"
+                fill="url(#mountain1)"
+                className="mountain-curve"
+              />
+            </g>
+
+            {/* Tech Integration Points */}
+            <g className="tech-points">
+              {[
+                [300, 220], [500, 140], [700, 200], [900, 160]
+              ].map(([x, y], i) => (
+                <g key={`tech-point-${i}`}>
+                  <circle 
+                    cx={x} 
+                    cy={y} 
+                    r="4" 
+                    fill={isDarkMode ? "#4ade80" : "#22c55e"} 
+                    className="animate-ping"
+                  />
+                  <circle 
+                    cx={x} 
+                    cy={y} 
+                    r="2" 
+                    fill={isDarkMode ? "#818cf8" : "#6366f1"}
+                  />
+                </g>
+              ))}
+            </g>
+
+            {/* Circuit Paths */}
+            <g className="circuit-paths">
+              <path
+                d="M50,280 C200,260 400,240 600,230 S800,220 1150,210"
+                stroke="url(#circuit)"
+                strokeWidth="1"
+                fill="none"
+                className="animate-pulse"
+              />
+              <path
+                d="M50,260 C300,240 600,220 900,200 S1000,190 1150,180"
+                stroke="url(#circuit)"
+                strokeWidth="1"
+                fill="none"
+                className="animate-pulse"
+              />
+            </g>
           </svg>
         </div>
 
@@ -200,7 +322,7 @@ export default function NordWestWebsite() {
             <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
               <span className="block chromatic-text rgb-glitch">Building the future</span>
               <span className="block text-emerald-400 rgb-glitch">where nature and</span>
-              <span className="block text-purple-400 rgb-glitch">machine meet.</span>
+              <span className="block text-purple-400 rgb-glitch">technology thrive.</span>
             </h1>
           </div>
 
