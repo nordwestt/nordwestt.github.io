@@ -483,16 +483,16 @@ export default function NordWestWebsite() {
           <div className="space-y-16">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="relative">
-                <div className="testimonial-card bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8">
+                <div className={`testimonial-card ${isDarkMode ? "bg-slate-800/30 border-slate-700/50" : "bg-white/80 border-stone-300"} backdrop-blur-sm border rounded-2xl p-8`}>
                   <blockquote
-                    className={`text-xl md:text-2xl mb-6 leading-relaxed italic ${isDarkMode ? "text-slate-200" : "text-stone-700"}`}
+                    className={`text-xl md:text-2xl mb-6 leading-relaxed italic ${isDarkMode ? "text-slate-200" : "text-stone-800"}`}
                   >
                     "{testimonial.quote}"
                   </blockquote>
                   <div className="flex items-center">
                     <div>
-                      <div className="font-semibold text-emerald-400">{testimonial.author}</div>
-                      <div className="text-slate-400">{testimonial.role}</div>
+                      <div className="font-semibold text-emerald-600">{testimonial.author}</div>
+                      <div className={isDarkMode ? "text-slate-400" : "text-stone-600"}>{testimonial.role}</div>
                     </div>
                   </div>
                 </div>
@@ -514,15 +514,19 @@ export default function NordWestWebsite() {
           </div>
 
           <div className="space-y-12 text-xl md:text-2xl leading-relaxed">
-            <p className="philosophy-text text-emerald-300">Open-source is our compass.</p>
-            <p className="philosophy-text text-purple-300">Sustainability is our path.</p>
-            <p className="philosophy-text text-cyan-300">Humanity is our destination.</p>
+            <p className={`philosophy-text ${isDarkMode ? "text-emerald-300" : "text-emerald-700"}`}>Open-source is our compass.</p>
+            <p className={`philosophy-text ${isDarkMode ? "text-purple-300" : "text-purple-700"}`}>Sustainability is our path.</p>
+            <p className={`philosophy-text ${isDarkMode ? "text-cyan-300" : "text-cyan-700"}`}>Humanity is our destination.</p>
           </div>
 
           <div
-            className={`mt-16 p-8 bg-gradient-to-r from-emerald-900/20 to-purple-900/20 rounded-2xl backdrop-blur-sm border ${isDarkMode ? "border-slate-700/50" : "border-stone-300/50"}`}
+            className={`mt-16 p-8 ${
+              isDarkMode 
+                ? "bg-gradient-to-r from-emerald-900/20 to-purple-900/20 border-slate-700/50" 
+                : "bg-gradient-to-r from-emerald-50 to-purple-50 border-stone-200"
+            } rounded-2xl backdrop-blur-sm border`}
           >
-            <p className={`text-lg leading-relaxed ${isDarkMode ? "text-slate-300" : "text-stone-600"}`}>
+            <p className={`text-lg leading-relaxed ${isDarkMode ? "text-slate-300" : "text-stone-700"}`}>
               In the intersection of alpine serenity and technological innovation, we find the clarity to build systems
               that serve both progress and preservation. Every algorithm we craft, every system we architect, carries
               the responsibility of our shared future.
@@ -540,53 +544,61 @@ export default function NordWestWebsite() {
 
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-semibold mb-6 text-emerald-400">Get in Touch</h3>
+              <h3 className={`text-2xl font-semibold mb-6 ${isDarkMode ? "text-emerald-400" : "text-emerald-600"}`}>Get in Touch</h3>
               <form className="space-y-6">
                 <div>
                   <Input
                     placeholder="Your Name"
-                    className={`${isDarkMode ? "bg-slate-800/50 border-slate-600 text-white placeholder-slate-400" : "bg-white/80 border-stone-300 text-stone-800 placeholder-stone-500"} backdrop-blur-sm`}
+                    className={`${isDarkMode ? "bg-slate-800/50 border-slate-600 text-white placeholder-slate-400" : "bg-white/90 border-stone-300 text-stone-800 placeholder-stone-500"} backdrop-blur-sm`}
                   />
                 </div>
                 <div>
                   <Input
                     type="email"
                     placeholder="your@email.com"
-                    className="bg-slate-800/50 border-slate-600 text-white placeholder-slate-400"
+                    className={`${isDarkMode ? "bg-slate-800/50 border-slate-600 text-white placeholder-slate-400" : "bg-white/90 border-stone-300 text-stone-800 placeholder-stone-500"} backdrop-blur-sm`}
                   />
                 </div>
                 <div>
                   <Textarea
                     placeholder="Tell me about your project..."
                     rows={5}
-                    className="bg-slate-800/50 border-slate-600 text-white placeholder-slate-400"
+                    className={`${isDarkMode ? "bg-slate-800/50 border-slate-600 text-white placeholder-slate-400" : "bg-white/90 border-stone-300 text-stone-800 placeholder-stone-500"} backdrop-blur-sm`}
                   />
                 </div>
-                <Button className="w-full bg-gradient-to-r from-emerald-600 to-purple-600 hover:from-emerald-500 hover:to-purple-500">
+                <Button className="w-full bg-gradient-to-r from-emerald-600 to-purple-600 hover:from-emerald-500 hover:to-purple-500 text-white">
                   Send Message
                 </Button>
               </form>
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold mb-6 text-purple-400">Direct Contact</h3>
+              <h3 className={`text-2xl font-semibold mb-6 ${isDarkMode ? "text-purple-400" : "text-purple-600"}`}>Direct Contact</h3>
               <div className="space-y-4">
                 <div className="flex items-center">
-                  <Mail className="w-5 h-5 mr-3 text-emerald-400" />
-                  <span>hello@nordwestt.com</span>
+                  <Mail className={`w-5 h-5 mr-3 ${isDarkMode ? "text-emerald-400" : "text-emerald-600"}`} />
+                  <span className={isDarkMode ? "text-white" : "text-stone-800"}>hello@nordwestt.com</span>
                 </div>
                 <div className="flex items-center">
-                  <MapPin className="w-5 h-5 mr-3 text-emerald-400" />
-                  <span>Operating from the Italian Alps</span>
+                  <MapPin className={`w-5 h-5 mr-3 ${isDarkMode ? "text-emerald-400" : "text-emerald-600"}`} />
+                  <span className={isDarkMode ? "text-white" : "text-stone-800"}>Operating from the Italian Alps</span>
                 </div>
               </div>
 
-              <div className="mt-8 p-6 bg-slate-800/30 rounded-xl border border-slate-700/50">
-                <h4 className="font-semibold mb-3 text-cyan-400">Schedule a Consultation</h4>
-                <p className="text-slate-300 mb-4">Book a 30-minute discovery call to discuss your project needs.</p>
+              <div className={`mt-8 p-6 ${
+                isDarkMode 
+                  ? "bg-slate-800/30 border-slate-700/50" 
+                  : "bg-white/90 border-stone-200"
+              } rounded-xl border`}>
+                <h4 className={`font-semibold mb-3 ${isDarkMode ? "text-cyan-400" : "text-cyan-600"}`}>Schedule a Consultation</h4>
+                <p className={isDarkMode ? "text-slate-300" : "text-stone-700"} mb-4>Book a 30-minute discovery call to discuss your project needs.</p>
                 <Button
                   variant="outline"
-                  className="border-emerald-500 text-emerald-400 hover:bg-emerald-500 hover:text-white bg-transparent"
+                  className={`${
+                    isDarkMode 
+                      ? "border-emerald-500 text-emerald-400 hover:bg-emerald-500" 
+                      : "border-emerald-600 text-emerald-600 hover:bg-emerald-600"
+                  } hover:text-white bg-transparent`}
                 >
                   Open Calendar
                 </Button>
