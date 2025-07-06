@@ -134,7 +134,7 @@ export default function NordWestWebsite() {
         <div className="absolute inset-0 hero-background" />
 
         {/* ML Mountain Visualization */}
-        <div className="absolute bottom-0 left-0 right-0 z-5">
+        <div className="absolute bottom-0 left-0 right-0 z-5 mb-8">
           <svg viewBox="0 0 1200 300" className="w-full h-auto">
             <defs>
               <linearGradient id="mountain1" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -174,7 +174,7 @@ export default function NordWestWebsite() {
                   <text 
                     x="20" 
                     y={285 - tick * 65} 
-                    fill={isDarkMode ? "#64748b" : "#475569"} 
+                    stroke={isDarkMode ? "#475569" : "#c084fc"} 
                     fontSize="12"
                   >
                     {tick * 25}
@@ -192,9 +192,9 @@ export default function NordWestWebsite() {
                     y2="285" 
                   />
                   <text 
-                    x={45 + tick * 275} 
-                    y="295" 
-                    fill={isDarkMode ? "#64748b" : "#475569"} 
+                    x={50 + tick * 275} 
+                    y="300" 
+                    stroke={isDarkMode ? "#64748b" : "#34d399"} 
                     fontSize="12"
                     textAnchor="middle"
                   >
