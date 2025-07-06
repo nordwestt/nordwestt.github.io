@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Github, Mail, MapPin, Star, Code, Brain, Users, Shield } from "lucide-react"
+import { Github, Mail, MapPin, Star, Code, Brain, Users, Shield, Leaf, Globe2, Heart } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -505,25 +505,58 @@ export default function NordWestWebsite() {
       {/* Philosophy Section */}
       <section className="py-32 px-6 relative">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-16 chromatic-text rgb-glitch">Our Philosophy</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-32 chromatic-text rgb-glitch">Our Philosophy</h2>
 
           {/* Compass Animation Container */}
           <div className="relative h-[400px] mb-16">
             {/* Core Values */}
-            <div className="absolute left-0 top-1/2 -translate-y-1/2 transform -translate-x-4">
-              <p className={`text-xl font-semibold ${isDarkMode ? "text-emerald-300" : "text-emerald-700"}`}>
-                Open-source
-              </p>
+            <div className="absolute left-0 top-1/2 -translate-y-1/2 transform -translate-x-4 group">
+              <div className={`p-6 rounded-xl transition-all duration-300 ${
+                isDarkMode 
+                  ? "bg-slate-800/30 hover:bg-slate-800/50 border-slate-700/50" 
+                  : "bg-white/70 hover:bg-white/90 border-stone-200"
+              } border backdrop-blur-sm`}>
+                <div className="flex flex-col items-center space-y-3">
+                  <div className={`p-3 rounded-full ${isDarkMode ? "bg-emerald-900/30" : "bg-emerald-100"} group-hover:scale-110 transition-transform duration-300`}>
+                    <Leaf className={`w-8 h-8 ${isDarkMode ? "text-emerald-300" : "text-emerald-700"}`} />
+                  </div>
+                  <p className={`text-xl font-semibold ${isDarkMode ? "text-emerald-300" : "text-emerald-700"}`}>
+                    Open-source
+                  </p>
+                </div>
+              </div>
             </div>
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 transform -translate-y-4">
-              <p className={`text-xl font-semibold ${isDarkMode ? "text-purple-300" : "text-purple-700"}`}>
-                Sustainability
-              </p>
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 transform -translate-y-24 group">
+              <div className={`p-6 rounded-xl transition-all duration-300 ${
+                isDarkMode 
+                  ? "bg-slate-800/30 hover:bg-slate-800/50 border-slate-700/50" 
+                  : "bg-white/70 hover:bg-white/90 border-stone-200"
+              } border backdrop-blur-sm`}>
+                <div className="flex flex-col items-center space-y-3">
+                  <div className={`p-3 rounded-full ${isDarkMode ? "bg-purple-900/30" : "bg-purple-100"} group-hover:scale-110 transition-transform duration-300`}>
+                    <Globe2 className={`w-8 h-8 ${isDarkMode ? "text-purple-300" : "text-purple-700"}`} />
+                  </div>
+                  <p className={`text-xl font-semibold ${isDarkMode ? "text-purple-300" : "text-purple-700"}`}>
+                    Sustainability
+                  </p>
+                </div>
+              </div>
             </div>
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 transform translate-x-4">
-              <p className={`text-xl font-semibold ${isDarkMode ? "text-cyan-300" : "text-cyan-700"}`}>
-                Humanity
-              </p>
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 transform translate-x-4 group">
+              <div className={`p-6 rounded-xl transition-all duration-300 ${
+                isDarkMode 
+                  ? "bg-slate-800/30 hover:bg-slate-800/50 border-slate-700/50" 
+                  : "bg-white/70 hover:bg-white/90 border-stone-200"
+              } border backdrop-blur-sm`}>
+                <div className="flex flex-col items-center space-y-3">
+                  <div className={`p-3 rounded-full ${isDarkMode ? "bg-cyan-900/30" : "bg-cyan-100"} group-hover:scale-110 transition-transform duration-300`}>
+                    <Heart className={`w-8 h-8 ${isDarkMode ? "text-cyan-300" : "text-cyan-700"}`} />
+                  </div>
+                  <p className={`text-xl font-semibold ${isDarkMode ? "text-cyan-300" : "text-cyan-700"}`}>
+                    Humanity
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Compass */}
