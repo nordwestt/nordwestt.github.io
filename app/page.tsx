@@ -50,44 +50,36 @@ export default function NordWestWebsite() {
 
   const projects = [
     {
-      title: "Alpine-LLM",
-      description: "Sustainable AI inference engine optimized for edge computing",
-      tags: ["#LLM", "#Rust", "#Edge"],
-      stars: 1247,
-      githubUrl: "https://github.com/nordwest/alpine-llm",
-      projectUrl: "https://alpine-llm.dev"
+      title: "Compass AI",
+      description: "A privacy-first, local-first AI chatbot application",
+      tags: ["#Privacy", "#Local", "#Sustainability"],
+      stars: 4,
+      githubUrl: "https://github.com/compass-ai-chat/compass",
+      projectUrl: "https://compass-ai.chat"
     },
     {
-      title: "EcoRAG",
-      description: "Carbon-aware retrieval augmented generation framework",
-      tags: ["#RAG", "#Python", "#Sustainability"],
-      stars: 892,
-      githubUrl: "https://github.com/nordwest/eco-rag",
-      projectUrl: "https://ecorag.dev"
+      title: "ollama-ai-provider-v2",
+      description: "A provider for the AI SDK that allows you to use ollama models",
+      tags: ["#LLM", "#Local", "#AI SDK"],
+      stars: 11,
+      githubUrl: "https://github.com/nordwestt/ollama-ai-provider-v2",
+      projectUrl: "https://www.npmjs.com/package/ollama-ai-provider-v2"
     },
     {
-      title: "OpenMountain",
-      description: "Collaborative platform for distributed development teams",
-      tags: ["#React", "#Node", "#Collaboration"],
-      stars: 634,
-      githubUrl: "https://github.com/nordwest/openmountain",
-      projectUrl: "https://openmountain.dev"
+      title: "Radiooooo Download Button",
+      description: "A button that allows you to download your favorite radiooooo songs",
+      tags: ["#Radiooooo", "#Audio", "#Chrome Extension"],
+      stars: 2,
+      githubUrl: "https://github.com/nordwestt/Radiooooo-download-button",
+      projectUrl: "https://chromewebstore.google.com/detail/falplhjhdjliobhdpamajpdnnnoenjdh?utm_source=item-share-cb"
     },
     {
-      title: "ShimmerDB",
-      description: "Vector database with built-in privacy and encryption",
-      tags: ["#Database", "#Privacy", "#Rust"],
-      stars: 445,
-      githubUrl: "https://github.com/nordwest/shimmerdb",
-      projectUrl: "https://shimmerdb.dev"
-    },
-    {
-      title: "NaturalNLP",
-      description: "Ethical NLP toolkit with bias detection and mitigation",
-      tags: ["#NLP", "#Ethics", "#Python"],
-      stars: 723,
-      githubUrl: "https://github.com/nordwest/natural-nlp",
-      projectUrl: "https://natural-nlp.dev"
+      title: "Kokoro-Wyoming",
+      description: "A wyoming protocol server that implements Kokoro using the Kokoro onnx python library",
+      tags: ["#TTS", "#Local", "#Kokoro"],
+      stars: 9,
+      githubUrl: "https://github.com/nordwestt/kokoro-wyoming",
+      projectUrl: "https://hub.docker.com/r/nordwestt/kokoro-wyoming"
     },
   ]
 
@@ -441,7 +433,7 @@ export default function NordWestWebsite() {
                 className={`${isDarkMode ? "bg-slate-800/50 border-slate-700" : "bg-white/70 border-stone-200"} project-card group cursor-pointer backdrop-blur-sm`}
                 onClick={() => window.open(project.projectUrl, '_blank')}
               >
-                <CardContent className="p-6">
+                <CardContent className="p-6 flex flex-col h-full">
                   <div className="flex items-start justify-between mb-4">
                     <h3
                       className={`text-xl font-semibold group-hover:text-emerald-400 transition-colors ${isDarkMode ? "text-white" : "text-stone-800"}`}
@@ -458,7 +450,7 @@ export default function NordWestWebsite() {
                     {project.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mt-auto">
                     {project.tags.map((tag, tagIndex) => (
                       <span key={tagIndex} className="px-3 py-1 bg-slate-700/50 text-emerald-400 text-sm rounded-full">
                         {tag}
