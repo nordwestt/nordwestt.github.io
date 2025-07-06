@@ -88,17 +88,17 @@ export default function NordWestWebsite() {
       quote:
         "With his expertise our process was automated and the time was reduced from about 5 minutes to 20-30 seconds",
       author: "Collectia A/S",
-      role: "",
+      role: "Chief of Development, Karina Achton",
     },
     {
       quote: "The open-source approach and sustainable mindset made all the difference in our project's success.",
       author: "Leonardo",
-      role: "",
+      role: "Chief Software Engineer, Michael Black",
     },
     {
-      quote: "Rare combination of deep technical knowledge and genuine care for environmental impact.",
-      author: "Elena Rodriguez",
-      role: "Founder, EcoAI Labs",
+      quote: "Rare combination of deep technical knowledge and genuine care for his work.",
+      author: "CardLab ApS",
+      role: "CEO, Frank Sandeløv",
     },
   ]
 
@@ -594,7 +594,7 @@ export default function NordWestWebsite() {
                 <p className={isDarkMode ? "text-slate-300" : "text-stone-700"} mb-4>Book a 30-minute discovery call to discuss your project needs.</p>
                 <Button
                   variant="outline"
-                  className={`${
+                  className={`mt-2 ${
                     isDarkMode 
                       ? "border-emerald-500 text-emerald-400 hover:bg-emerald-500" 
                       : "border-emerald-600 text-emerald-600 hover:bg-emerald-600"
@@ -612,7 +612,7 @@ export default function NordWestWebsite() {
       <footer className="py-12 px-6 border-t border-slate-800">
         <div className="max-w-6xl mx-auto text-center">
           <p className={isDarkMode ? "text-slate-400" : "text-stone-500"}>
-            © 2024 NordWest Consulting. Building the future from the alpine edge.
+            © 2025 NordWestT Consulting. Building the future from the alpine edge.
           </p>
         </div>
       </footer>
