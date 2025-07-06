@@ -54,30 +54,40 @@ export default function NordWestWebsite() {
       description: "Sustainable AI inference engine optimized for edge computing",
       tags: ["#LLM", "#Rust", "#Edge"],
       stars: 1247,
+      githubUrl: "https://github.com/nordwest/alpine-llm",
+      projectUrl: "https://alpine-llm.dev"
     },
     {
       title: "EcoRAG",
       description: "Carbon-aware retrieval augmented generation framework",
       tags: ["#RAG", "#Python", "#Sustainability"],
       stars: 892,
+      githubUrl: "https://github.com/nordwest/eco-rag",
+      projectUrl: "https://ecorag.dev"
     },
     {
       title: "OpenMountain",
       description: "Collaborative platform for distributed development teams",
       tags: ["#React", "#Node", "#Collaboration"],
       stars: 634,
+      githubUrl: "https://github.com/nordwest/openmountain",
+      projectUrl: "https://openmountain.dev"
     },
     {
       title: "ShimmerDB",
       description: "Vector database with built-in privacy and encryption",
       tags: ["#Database", "#Privacy", "#Rust"],
       stars: 445,
+      githubUrl: "https://github.com/nordwest/shimmerdb",
+      projectUrl: "https://shimmerdb.dev"
     },
     {
       title: "NaturalNLP",
       description: "Ethical NLP toolkit with bias detection and mitigation",
       tags: ["#NLP", "#Ethics", "#Python"],
       stars: 723,
+      githubUrl: "https://github.com/nordwest/natural-nlp",
+      projectUrl: "https://natural-nlp.dev"
     },
   ]
 
@@ -429,6 +439,7 @@ export default function NordWestWebsite() {
               <Card
                 key={index}
                 className={`${isDarkMode ? "bg-slate-800/50 border-slate-700" : "bg-white/70 border-stone-200"} project-card group cursor-pointer backdrop-blur-sm`}
+                onClick={() => window.open(project.projectUrl, '_blank')}
               >
                 <CardContent className="p-6">
                   <div className="flex items-start justify-between mb-4">
@@ -455,12 +466,16 @@ export default function NordWestWebsite() {
                     ))}
                   </div>
 
-                  <div
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
                     className={`mt-2 flex items-center hover:text-white transition-colors ${isDarkMode ? "text-slate-400" : "text-stone-500"}`}
                   >
                     <Github className="w-4 h-4 mr-2" />
                     <span className="text-sm">View on GitHub</span>
-                  </div>
+                  </a>
                 </CardContent>
               </Card>
             ))}
