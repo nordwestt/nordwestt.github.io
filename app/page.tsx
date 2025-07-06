@@ -262,7 +262,7 @@ export default function NordWestWebsite() {
       {/* Services Section */}
       <section className="py-32 px-6 relative">
         {/* Drifting Clouds */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
+        <div className={`absolute inset-0 overflow-hidden pointer-events-none ${isDarkMode ? "opacity-30" : "opacity-100"}`}>
           <div className="cloud cloud-1">☁️</div>
           <div className="cloud cloud-2">☁️</div>
           <div className="cloud cloud-3">☁️</div>
