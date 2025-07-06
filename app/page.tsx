@@ -34,7 +34,7 @@ export default function NordWestWebsite() {
     {
       icon: Code,
       title: "Full-Stack Development",
-      description: "React, Node.js, DevOps, Rust - from concept to production",
+      description: "React, Node.js, DevOps, Python - from concept to production",
     },
     {
       icon: Users,
@@ -86,14 +86,14 @@ export default function NordWestWebsite() {
   const testimonials = [
     {
       quote:
-        "NordWest transformed our AI strategy with a perfect blend of technical excellence and ethical consideration.",
-      author: "Sarah Chen",
-      role: "CTO, GreenTech Solutions",
+        "With his expertise our process was automated and the time was reduced from about 5 minutes to 20-30 seconds",
+      author: "Collectia A/S",
+      role: "",
     },
     {
       quote: "The open-source approach and sustainable mindset made all the difference in our project's success.",
-      author: "Marcus Weber",
-      role: "Lead Engineer, Alpine Dynamics",
+      author: "Leonardo",
+      role: "",
     },
     {
       quote: "Rare combination of deep technical knowledge and genuine care for environmental impact.",
@@ -351,7 +351,7 @@ export default function NordWestWebsite() {
               <h2 className="text-4xl md:text-5xl font-bold mb-8 chromatic-text rgb-glitch">From the Alpine Edge</h2>
               <div className="space-y-6 text-lg leading-relaxed">
                 <p className={isDarkMode ? "text-slate-300" : "text-stone-700"}>
-                  Operating from high altitudes in the Swiss Alps, I bridge the gap between cutting-edge AI technology
+                  Operating from high altitudes in the Italian Alps, I bridge the gap between cutting-edge AI technology
                   and sustainable, ethical development practices.
                 </p>
                 <p className={isDarkMode ? "text-slate-300" : "text-stone-700"}>
@@ -573,11 +573,11 @@ export default function NordWestWebsite() {
               <div className="space-y-4">
                 <div className="flex items-center">
                   <Mail className="w-5 h-5 mr-3 text-emerald-400" />
-                  <span>hello@nordwest.dev</span>
+                  <span>hello@nordwestt.com</span>
                 </div>
                 <div className="flex items-center">
                   <MapPin className="w-5 h-5 mr-3 text-emerald-400" />
-                  <span>Operating from the Alpine shimmer zone</span>
+                  <span>Operating from the Italian Alps</span>
                 </div>
               </div>
 
