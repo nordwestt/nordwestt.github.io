@@ -549,33 +549,40 @@ export default function NordWestWebsite() {
 
         <style jsx>{`
           @keyframes rotateCompass {
-            0%, 30% {
+            0% {
               transform: rotate(-45deg) scale(1);
             }
-            15% {
+            10% {
               transform: rotate(-45deg) scale(1);
             }
-            33%, 63% {
+            25% {
               transform: rotate(45deg) scale(1);
             }
-            48% {
+            35% {
               transform: rotate(45deg) scale(1);
             }
-            66%, 96% {
+            50% {
               transform: rotate(135deg) scale(1);
             }
-            81% {
+            60% {
               transform: rotate(135deg) scale(1);
+            }
+            75% {
+              transform: rotate(45deg) scale(1);
+            }
+            85% {
+              transform: rotate(45deg) scale(1);
             }
             100% {
-              transform: rotate(-90deg) scale(1);
+              transform: rotate(-45deg) scale(1);
             }
           }
 
           .compass-container {
-            animation: rotateCompass 9s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+            animation: rotateCompass 18s cubic-bezier(0.68, -0.6, 0.32, 1.6) infinite;
             display: inline-block;
             transform-origin: center;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
           }
         `}</style>
       </section>
