@@ -212,7 +212,7 @@ export default function NordWestWebsite() {
 
           <Button
             size="lg"
-            className="bg-gradient-to-r from-emerald-600 to-purple-600 hover:from-emerald-500 hover:to-purple-500 text-white px-8 py-4 text-lg font-semibold shimmer-button"
+            className={`mossy-rock-button periodic-shimmer text-white px-8 py-4 text-lg font-semibold ${isDarkMode ? 'hover:text-emerald-200' : 'hover:text-emerald-50'}`}
           >
             Schedule a Consultation
           </Button>
