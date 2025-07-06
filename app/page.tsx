@@ -507,16 +507,29 @@ export default function NordWestWebsite() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-16 chromatic-text rgb-glitch">Our Philosophy</h2>
 
-          {/* Subtle Aurora Background */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="aurora aurora-1"></div>
-            <div className="aurora aurora-2"></div>
-          </div>
+          {/* Compass Animation Container */}
+          <div className="relative h-[400px] mb-16">
+            {/* Core Values */}
+            <div className="absolute left-0 top-1/2 -translate-y-1/2 transform -translate-x-4">
+              <p className={`text-xl font-semibold ${isDarkMode ? "text-emerald-300" : "text-emerald-700"}`}>
+                Open-source
+              </p>
+            </div>
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 transform -translate-y-4">
+              <p className={`text-xl font-semibold ${isDarkMode ? "text-purple-300" : "text-purple-700"}`}>
+                Sustainability
+              </p>
+            </div>
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 transform translate-x-4">
+              <p className={`text-xl font-semibold ${isDarkMode ? "text-cyan-300" : "text-cyan-700"}`}>
+                Humanity
+              </p>
+            </div>
 
-          <div className="space-y-12 text-xl md:text-2xl leading-relaxed">
-            <p className={`philosophy-text ${isDarkMode ? "text-emerald-300" : "text-emerald-700"}`}>Open-source is our compass.</p>
-            <p className={`philosophy-text ${isDarkMode ? "text-purple-300" : "text-purple-700"}`}>Sustainability is our path.</p>
-            <p className={`philosophy-text ${isDarkMode ? "text-cyan-300" : "text-cyan-700"}`}>Humanity is our destination.</p>
+            {/* Compass */}
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+              <div className="text-[200px] compass-container">🧭</div>
+            </div>
           </div>
 
           <div
@@ -533,6 +546,38 @@ export default function NordWestWebsite() {
             </p>
           </div>
         </div>
+
+        <style jsx>{`
+          @keyframes rotateCompass {
+            0%, 30% {
+              transform: rotate(-45deg) scale(1);
+            }
+            15% {
+              transform: rotate(-45deg) scale(1);
+            }
+            33%, 63% {
+              transform: rotate(45deg) scale(1);
+            }
+            48% {
+              transform: rotate(45deg) scale(1);
+            }
+            66%, 96% {
+              transform: rotate(135deg) scale(1);
+            }
+            81% {
+              transform: rotate(135deg) scale(1);
+            }
+            100% {
+              transform: rotate(-90deg) scale(1);
+            }
+          }
+
+          .compass-container {
+            animation: rotateCompass 9s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+            display: inline-block;
+            transform-origin: center;
+          }
+        `}</style>
       </section>
 
       {/* Contact Section */}
