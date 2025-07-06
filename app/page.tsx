@@ -300,7 +300,7 @@ export default function NordWestWebsite() {
             {/* Circuit Paths */}
             <g className="circuit-paths">
               <path
-                d="M50,280 C200,260 400,240 600,230 S800,220 1150,210"
+                d="M50,220 C200,200 400,180 600,160 S800,140 1150,120"
                 stroke="url(#circuit)"
                 strokeWidth="1"
                 fill="none"
