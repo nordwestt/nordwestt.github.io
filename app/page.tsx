@@ -130,7 +130,7 @@ export default function NordWestWebsite() {
       </button>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 pt-24">
+      <section className="relative min-h-screen flex items-center justify-center px-6">
         <div className="absolute inset-0 hero-background" />
 
         {/* ML Mountain Visualization */}
@@ -226,21 +226,6 @@ export default function NordWestWebsite() {
 
             {/* ML Data Points and Trend Lines */}
             <g className="ml-visualization">
-              {/* Scatter plot points */}
-              {/* {[
-                [100, 200], [200, 150], [300, 180], [400, 120], 
-                [500, 90], [600, 140], [700, 160], [800, 110],
-                [900, 130], [1000, 100], [1100, 120]
-              ].map(([x, y], i) => (
-                <circle 
-                  key={`data-${i}`}
-                  cx={x} 
-                  cy={y} 
-                  r="3" 
-                  fill={isDarkMode ? "#4ade80" : "#22c55e"}
-                  className="animate-pulse"
-                />
-              ))} */}
 
               {/* Confidence interval area */}
               <path
@@ -306,19 +291,12 @@ export default function NordWestWebsite() {
                 fill="none"
                 className="animate-pulse"
               />
-              {/* <path
-                d="M50,260 C300,240 600,220 900,200 S1000,190 1150,180"
-                stroke="url(#circuit)"
-                strokeWidth="1"
-                fill="none"
-                className="animate-pulse"
-              /> */}
             </g>
           </svg>
         </div>
 
         <div className="relative z-10 text-center max-w-4xl mx-auto">
-          <div className="mb-8 relative">
+          <div className="mb-16 relative">
             <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
               <span className="block chromatic-text rgb-glitch">Building the future</span>
               <span className="block text-emerald-400 rgb-glitch">where nature and</span>
