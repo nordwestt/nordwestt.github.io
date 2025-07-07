@@ -29,22 +29,22 @@ export default function NordWestWebsite() {
     {
       icon: Brain,
       title: "AI/LLM Consulting",
-      description: "Fine-tuning, embeddings, RAG systems, and custom AI solutions",
+      description: "Local-first AI solutions, self-hosted models, and vendor-independent architectures",
     },
     {
       icon: Code,
       title: "Full-Stack Development",
-      description: "React, Node.js, DevOps, Python - from concept to production",
+      description: "Open-source tech stack, Linux-first development, and vendor-agnostic solutions",
     },
     {
       icon: Users,
       title: "Open-Source Strategy",
-      description: "Community building, contribution strategies, and project governance",
+      description: "Breaking free from proprietary software, community building, and FOSS governance",
     },
     {
       icon: Shield,
       title: "Technical Advisory",
-      description: "Architecture design, code reviews, and strategic technical guidance",
+      description: "Migrating from proprietary systems, open-source alternatives, and independence roadmaps",
     },
   ]
 
@@ -521,7 +521,7 @@ export default function NordWestWebsite() {
                     <Leaf className={`w-8 h-8 ${isDarkMode ? "text-emerald-300" : "text-emerald-700"}`} />
                   </div>
                   <p className={`text-xl font-semibold ${isDarkMode ? "text-emerald-300" : "text-emerald-700"}`}>
-                    Open-source
+                    Freedom & Independence
                   </p>
                 </div>
               </div>
@@ -537,7 +537,7 @@ export default function NordWestWebsite() {
                     <Globe2 className={`w-8 h-8 ${isDarkMode ? "text-purple-300" : "text-purple-700"}`} />
                   </div>
                   <p className={`text-xl font-semibold ${isDarkMode ? "text-purple-300" : "text-purple-700"}`}>
-                    Sustainability
+                    Open Source
                   </p>
                 </div>
               </div>
@@ -553,7 +553,7 @@ export default function NordWestWebsite() {
                     <Heart className={`w-8 h-8 ${isDarkMode ? "text-cyan-300" : "text-cyan-700"}`} />
                   </div>
                   <p className={`text-xl font-semibold ${isDarkMode ? "text-cyan-300" : "text-cyan-700"}`}>
-                    Humanity
+                    Community Power
                   </p>
                 </div>
               </div>
@@ -573,9 +573,10 @@ export default function NordWestWebsite() {
             } rounded-2xl backdrop-blur-sm border`}
           >
             <p className={`text-lg leading-relaxed ${isDarkMode ? "text-slate-300" : "text-stone-700"}`}>
-              In the intersection of alpine serenity and technological innovation, I find the clarity to build systems
-              that serve both progress and preservation. Every algorithm I craft, every system I architect, carries
-              a vision of our shared future.
+              From the alpine heights, we champion digital freedom and independence. We believe in breaking free from vendor lock-in,
+              embracing open-source solutions, and building systems that put control back in the hands of users. Every project
+              we undertake is guided by these principles—because true innovation flourishes only in an environment of openness,
+              collaboration, and freedom from corporate monopolies.
             </p>
           </div>
         </div>
