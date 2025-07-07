@@ -515,10 +515,10 @@ export default function NordWestWebsite() {
       {/* Philosophy Section */}
       <section className="py-16 md:py-32 px-4 md:px-6 relative">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-16 md:mb-32 chromatic-text rgb-glitch">Guiding Principles</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold md:mb-32 chromatic-text rgb-glitch">Guiding Principles</h2>
 
           {/* Compass Animation Container */}
-          <div className="relative h-[450px] sm:h-[500px] mb-8 md:mb-16">
+          <div className="relative h-[450px] sm:h-[500px] mt-20">
             {/* Core Values */}
             {/* Left Value - Freedom & Independence */}
             <div className="absolute left-[5%] sm:left-0 top-1/2 -translate-y-1/2 transform sm:-translate-x-4 w-[30%] sm:w-auto group">
@@ -581,7 +581,7 @@ export default function NordWestWebsite() {
           </div>
 
           <div
-            className={`mt-8 md:mt-16 p-6 md:p-8 ${
+            className={`p-6 md:p-8 ${
               isDarkMode 
                 ? "bg-gradient-to-r from-emerald-900/20 to-purple-900/20 border-slate-700/50" 
                 : "bg-gradient-to-r from-emerald-50 to-purple-50 border-stone-200"
