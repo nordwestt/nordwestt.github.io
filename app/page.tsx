@@ -32,9 +32,19 @@ export default function NordWestWebsite() {
       description: "Local-first AI solutions, self-hosted models, and vendor-independent architectures",
     },
     {
+      icon: Globe2,
+      title: "Professional Websites",
+      description: "Multilingual, responsive web experiences built with open-source frameworks and modern standards",
+    },
+    {
       icon: Code,
-      title: "Full-Stack Development",
-      description: "Open-source tech stack, Linux-first development, and vendor-agnostic solutions",
+      title: "Cross-Platform Apps",
+      description: "Freedom-respecting mobile apps using React Native, empowering users across all devices",
+    },
+    {
+      icon: Shield,
+      title: "Backend Engineering",
+      description: "Robust, scalable servers with Node.js, Python, or .NET Core - always open-source, always independent",
     },
     {
       icon: Users,
@@ -42,7 +52,7 @@ export default function NordWestWebsite() {
       description: "Breaking free from proprietary software, community building, and FOSS governance",
     },
     {
-      icon: Shield,
+      icon: Leaf,
       title: "Technical Advisory",
       description: "Migrating from proprietary systems, open-source alternatives, and independence roadmaps",
     },
@@ -59,7 +69,7 @@ export default function NordWestWebsite() {
     },
     {
       title: "ollama-ai-provider-v2",
-      description: "A provider for the AI SDK that allows you to use ollama models",
+      description: "An package for the AI SDK that allows you to use locally running ollama models",
       tags: ["#LLM", "#Local", "#AI SDK"],
       stars: 11,
       githubUrl: "https://github.com/nordwestt/ollama-ai-provider-v2",
@@ -67,7 +77,7 @@ export default function NordWestWebsite() {
     },
     {
       title: "Radiooooo Download Button",
-      description: "A button that allows you to download your favorite radiooooo songs",
+      description: "An extension that allows you to download your favorite radiooooo songs",
       tags: ["#Radiooooo", "#Audio", "#Chrome Extension"],
       stars: 2,
       githubUrl: "https://github.com/nordwestt/Radiooooo-download-button",
@@ -75,7 +85,7 @@ export default function NordWestWebsite() {
     },
     {
       title: "Kokoro-Wyoming",
-      description: "A wyoming protocol server that implements Kokoro using the Kokoro onnx python library",
+      description: "A high quality, real-time text-to-speech server that works with Home Assistant",
       tags: ["#TTS", "#Local", "#Kokoro"],
       stars: 9,
       githubUrl: "https://github.com/nordwestt/kokoro-wyoming",
@@ -396,7 +406,7 @@ export default function NordWestWebsite() {
             Services & Expertise
           </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {services.map((service, index) => (
               <Card
                 key={index}
@@ -505,7 +515,7 @@ export default function NordWestWebsite() {
       {/* Philosophy Section */}
       <section className="py-32 px-6 relative">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-32 chromatic-text rgb-glitch">Our Philosophy</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-32 chromatic-text rgb-glitch">Guiding Principles</h2>
 
           {/* Compass Animation Container */}
           <div className="relative h-[400px] mb-16">
@@ -573,9 +583,9 @@ export default function NordWestWebsite() {
             } rounded-2xl backdrop-blur-sm border`}
           >
             <p className={`text-lg leading-relaxed ${isDarkMode ? "text-slate-300" : "text-stone-700"}`}>
-              From the alpine heights, we champion digital freedom and independence. We believe in breaking free from vendor lock-in,
+              From the alpine heights, I champion digital freedom and independence. I believe in breaking free from vendor lock-in,
               embracing open-source solutions, and building systems that put control back in the hands of users. Every project
-              we undertake is guided by these principles—because true innovation flourishes only in an environment of openness,
+              I undertake is guided by these principles—because true innovation flourishes only in an environment of openness,
               collaboration, and freedom from corporate monopolies.
             </p>
           </div>
