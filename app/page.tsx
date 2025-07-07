@@ -354,7 +354,7 @@ export default function NordWestWebsite() {
       </section>
 
       {/* About Section */}
-      <section className={`py-32 px-6 relative ${isDarkMode ? "text-white" : "text-stone-800"}`}>
+      <section className={`py-32 px-6 h-[800px] relative ${isDarkMode ? "text-white" : "text-stone-800"}`}>
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-20 items-center">
             <div className="relative z-10">
@@ -366,7 +366,7 @@ export default function NordWestWebsite() {
                 </p>
                 <p className={isDarkMode ? "text-slate-300" : "text-stone-700"}>
                   With deep expertise in generative AI, full-stack development, and open-source ecosystems, I help
-                  organizations build the future responsibly—where innovation serves both humanity and our planet.
+                  organizations build the future responsibly—where innovation serves both in the short and long term.
                 </p>
                 <p className={isDarkMode ? "text-slate-300" : "text-stone-700"}>
                   Every line of code is written with intention. Every AI model is trained with consideration. Every
@@ -583,10 +583,10 @@ export default function NordWestWebsite() {
             } rounded-2xl backdrop-blur-sm border`}
           >
             <p className={`text-lg leading-relaxed ${isDarkMode ? "text-slate-300" : "text-stone-700"}`}>
-              From the alpine heights, I champion digital freedom and independence. I believe in breaking free from vendor lock-in,
-              embracing open-source solutions, and building systems that put control back in the hands of users. Every project
-              I undertake is guided by these principles—because true innovation flourishes only in an environment of openness,
-              collaboration, and freedom from corporate monopolies.
+            Like the enduring stone paths 
+              that have connected alpine villages for centuries, I aim to build software that stands the test of time—free from 
+              artificial expiration dates or remote kill switches. Each project is an opportunity to contribute to digital freedom and develop systems that truly empower users. I believe that meaningful innovation grows best in environments 
+              that encourage openness, collaboration, and technological independence.
             </p>
           </div>
         </div>
