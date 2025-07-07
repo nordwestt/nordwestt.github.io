@@ -513,56 +513,61 @@ export default function NordWestWebsite() {
       </section>
 
       {/* Philosophy Section */}
-      <section className="py-32 px-6 relative">
+      <section className="py-16 md:py-32 px-4 md:px-6 relative">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-32 chromatic-text rgb-glitch">Guiding Principles</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-16 md:mb-32 chromatic-text rgb-glitch">Guiding Principles</h2>
 
           {/* Compass Animation Container */}
-          <div className="relative h-[400px] mb-16">
+          <div className="relative h-[450px] sm:h-[500px] mb-8 md:mb-16">
             {/* Core Values */}
-            <div className="absolute left-0 top-1/2 -translate-y-1/2 transform -translate-x-4 group">
-              <div className={`p-6 rounded-xl transition-all duration-300 ${
+            {/* Left Value - Freedom & Independence */}
+            <div className="absolute left-[5%] sm:left-0 top-1/2 -translate-y-1/2 transform sm:-translate-x-4 w-[30%] sm:w-auto group">
+              <div className={`p-2 sm:p-6 rounded-xl transition-all duration-300 ${
                 isDarkMode 
                   ? "bg-slate-800/30 hover:bg-slate-800/50 border-slate-700/50" 
                   : "bg-white/70 hover:bg-white/90 border-stone-200"
               } border backdrop-blur-sm`}>
-                <div className="flex flex-col items-center space-y-3">
-                  <div className={`p-3 rounded-full ${isDarkMode ? "bg-emerald-900/30" : "bg-emerald-100"} group-hover:scale-110 transition-transform duration-300`}>
-                    <Leaf className={`w-8 h-8 ${isDarkMode ? "text-emerald-300" : "text-emerald-700"}`} />
+                <div className="flex flex-col items-center space-y-2 sm:space-y-3">
+                  <div className={`p-2 sm:p-3 rounded-full ${isDarkMode ? "bg-emerald-900/30" : "bg-emerald-100"} group-hover:scale-110 transition-transform duration-300`}>
+                    <Leaf className={`w-5 h-5 sm:w-8 sm:h-8 ${isDarkMode ? "text-emerald-300" : "text-emerald-700"}`} />
                   </div>
-                  <p className={`text-xl font-semibold ${isDarkMode ? "text-emerald-300" : "text-emerald-700"}`}>
+                  <p className={`text-sm sm:text-xl font-semibold ${isDarkMode ? "text-emerald-300" : "text-emerald-700"}`}>
                     Freedom & Independence
                   </p>
                 </div>
               </div>
             </div>
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 transform -translate-y-24 group">
-              <div className={`p-6 rounded-xl transition-all duration-300 ${
+
+            {/* Top Value - Open Source */}
+            <div className="absolute left-1/2 -translate-x-1/2 top-[5%] sm:top-0 transform sm:-translate-y-24 w-[30%] sm:w-auto group">
+              <div className={`p-2 sm:p-6 rounded-xl transition-all duration-300 ${
                 isDarkMode 
                   ? "bg-slate-800/30 hover:bg-slate-800/50 border-slate-700/50" 
                   : "bg-white/70 hover:bg-white/90 border-stone-200"
               } border backdrop-blur-sm`}>
-                <div className="flex flex-col items-center space-y-3">
-                  <div className={`p-3 rounded-full ${isDarkMode ? "bg-purple-900/30" : "bg-purple-100"} group-hover:scale-110 transition-transform duration-300`}>
-                    <Globe2 className={`w-8 h-8 ${isDarkMode ? "text-purple-300" : "text-purple-700"}`} />
+                <div className="flex flex-col items-center space-y-2 sm:space-y-3">
+                  <div className={`p-2 sm:p-3 rounded-full ${isDarkMode ? "bg-purple-900/30" : "bg-purple-100"} group-hover:scale-110 transition-transform duration-300`}>
+                    <Globe2 className={`w-5 h-5 sm:w-8 sm:h-8 ${isDarkMode ? "text-purple-300" : "text-purple-700"}`} />
                   </div>
-                  <p className={`text-xl font-semibold ${isDarkMode ? "text-purple-300" : "text-purple-700"}`}>
+                  <p className={`text-sm sm:text-xl font-semibold ${isDarkMode ? "text-purple-300" : "text-purple-700"}`}>
                     Open Source
                   </p>
                 </div>
               </div>
             </div>
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 transform translate-x-4 group">
-              <div className={`p-6 rounded-xl transition-all duration-300 ${
+
+            {/* Right Value - Community Power */}
+            <div className="absolute right-[5%] sm:right-0 top-1/2 -translate-y-1/2 transform sm:translate-x-4 w-[30%] sm:w-auto group">
+              <div className={`p-2 sm:p-6 rounded-xl transition-all duration-300 ${
                 isDarkMode 
                   ? "bg-slate-800/30 hover:bg-slate-800/50 border-slate-700/50" 
                   : "bg-white/70 hover:bg-white/90 border-stone-200"
               } border backdrop-blur-sm`}>
-                <div className="flex flex-col items-center space-y-3">
-                  <div className={`p-3 rounded-full ${isDarkMode ? "bg-cyan-900/30" : "bg-cyan-100"} group-hover:scale-110 transition-transform duration-300`}>
-                    <Heart className={`w-8 h-8 ${isDarkMode ? "text-cyan-300" : "text-cyan-700"}`} />
+                <div className="flex flex-col items-center space-y-2 sm:space-y-3">
+                  <div className={`p-2 sm:p-3 rounded-full ${isDarkMode ? "bg-cyan-900/30" : "bg-cyan-100"} group-hover:scale-110 transition-transform duration-300`}>
+                    <Heart className={`w-5 h-5 sm:w-8 sm:h-8 ${isDarkMode ? "text-cyan-300" : "text-cyan-700"}`} />
                   </div>
-                  <p className={`text-xl font-semibold ${isDarkMode ? "text-cyan-300" : "text-cyan-700"}`}>
+                  <p className={`text-sm sm:text-xl font-semibold ${isDarkMode ? "text-cyan-300" : "text-cyan-700"}`}>
                     Community Power
                   </p>
                 </div>
@@ -571,18 +576,18 @@ export default function NordWestWebsite() {
 
             {/* Compass */}
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-              <div className="text-[200px] compass-container">🧭</div>
+              <div className="text-[80px] sm:text-[200px] compass-container">🧭</div>
             </div>
           </div>
 
           <div
-            className={`mt-16 p-8 ${
+            className={`mt-8 md:mt-16 p-6 md:p-8 ${
               isDarkMode 
                 ? "bg-gradient-to-r from-emerald-900/20 to-purple-900/20 border-slate-700/50" 
                 : "bg-gradient-to-r from-emerald-50 to-purple-50 border-stone-200"
             } rounded-2xl backdrop-blur-sm border`}
           >
-            <p className={`text-lg leading-relaxed ${isDarkMode ? "text-slate-300" : "text-stone-700"}`}>
+            <p className={`text-base md:text-lg leading-relaxed ${isDarkMode ? "text-slate-300" : "text-stone-700"}`}>
             Like the enduring stone paths 
               that have connected alpine villages for centuries, I aim to build software that stands the test of time—free from 
               artificial expiration dates or remote kill switches. Each project is an opportunity to contribute to digital freedom and develop systems that truly empower users. I believe that meaningful innovation grows best in environments 
