@@ -379,17 +379,28 @@ export default function NordWestWebsite() {
             <div className="relative">
               <div className="w-80 h-80 mx-auto relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-purple-500/20 rounded-full blur-xl" />
-                <div className="relative w-full h-full flex items-center justify-center">
-                  <div className="text-[600px] sm:text-[600px] md:text-[600px] lg:text-[800px]">🏔️</div>
+                
+                <div className="relative w-full h-full flex items-center justify-center ">
+                <img 
+                    src="/mountain.svg" 
+                    alt="Compass" 
+                    className="w-[600px] h-[600px] sm:w-[600px] sm:h-[600px] md:w-[600px] md:h-[600px] lg:w-[800px] lg:h-[800px] max-w-none"
+                  />
                 </div>
               </div>
             </div>
           </div>
           {/* Floating Leaves */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="floating-leaf leaf-1">🍃</div>
-            <div className="floating-leaf leaf-2">🍂</div>
-            <div className="floating-leaf leaf-3">🍃</div>
+            <div className="floating-leaf leaf-1">
+              <img src="/leaf.svg" className="w-10 h-10" />
+            </div>
+            <div className="floating-leaf leaf-2">
+            <img src="/leaf.svg" className="w-10 h-10" />
+            </div>
+            <div className="floating-leaf leaf-3">
+            <img src="/leaf.svg" className="w-10 h-10" />
+            </div>
           </div>
         </div>
       </section>
@@ -560,7 +571,13 @@ export default function NordWestWebsite() {
                   />
                 </div>
                 <div className="col-span-1 flex justify-center items-center">
-                  <div className="text-[80px] sm:text-[160px] compass-container">🧭</div>
+                  <div className="text-[80px] sm:text-[160px] compass-container">
+                    <img 
+                      src="/compass.svg" 
+                      alt="Compass" 
+                      className="w-[80px] h-[80px] sm:w-[160px] sm:h-[160px] max-w-none"
+                    />
+                  </div>
                 </div>
                 <div className="col-span-1 justify-self-end">
                   <ValueCard
