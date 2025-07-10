@@ -10,7 +10,9 @@ import { ValueCard } from "./components/ValueCard"
 import {projects as projectsData} from './data/projects.data'
 
 export default function NordWestWebsite() {
-  const [isDarkMode, setIsDarkMode] = useState(true)
+  const [isDarkMode, setIsDarkMode] = useState(true);
+  const corsProxy = "https://workers-playground-delicate-bread-86d5.thomas-180.workers.dev";
+
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode)
@@ -20,18 +22,27 @@ export default function NordWestWebsite() {
   const [projects, setProjects] = useState(projectsData);
 
   const getNPMDownloadCount = async (packageName: string) => {
-    let result = await fetch(`https://api.npmjs.org/downloads/point/2025-01-01:2025-07-10/${packageName}`);
+    let result = await fetch(`${corsProxy}/https://api.npmjs.org/downloads/point/2025-01-01:2025-07-10/${packageName}`);
     const resultJson = await result.json();
     return resultJson.downloads;
   }
 
-  const fetchNPMDownloadCounts = async () => {
-    const npmProjects = projects.filter(x=>x.downloads?.type == 'npm');
+  const getDockerDownloadCount = async (packageName: string) => {
+    let result = await fetch(`${corsProxy}/https://hub.docker.com/v2/repositories/${packageName}`);
+    const resultJson = await result.json();
+    return resultJson.pull_count;
+  }
 
-    for(const project of npmProjects){
-      if(!project.downloads) continue;
+  const fetchDownloadCounts = async () => {
+    const downloadFetchers: Record<string, any> = {
+      'npm': getNPMDownloadCount,
+      'docker': getDockerDownloadCount
+    };
+
+    for(const project of projects){
+      if(!project.downloads || !downloadFetchers[project.downloads.type]) continue;
       
-      project.downloads.count = await getNPMDownloadCount(project.downloads?.name);
+      project.downloads.count = await downloadFetchers[project.downloads.type](project.downloads?.name);
       console.log("The count is", project.downloads.count);
     }
     setProjects(projects);
@@ -39,7 +50,7 @@ export default function NordWestWebsite() {
 
   useEffect(() => {
 
-    fetchNPMDownloadCounts();
+    fetchDownloadCounts();
 
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY })
