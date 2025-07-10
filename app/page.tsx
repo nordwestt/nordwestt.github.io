@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Github, Mail, MapPin, Star, Code, Brain, Users, Shield, Leaf, Globe2, Heart } from "lucide-react"
+import { Github, Mail, MapPin, Star, Code, Brain, Users, Shield, Leaf, Globe2, Heart, DownloadIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -17,7 +17,29 @@ export default function NordWestWebsite() {
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
 
+  const getNPMDownloadCount = async (packageName: string) => {
+    let result = await fetch(`https://api.npmjs.org/downloads/point/2025-01-01:2025-07-10/${packageName}`);
+    const resultJson = await result.json();
+    return resultJson.downloads;
+  }
+
+  const fetchNPMDownloadCounts = async () => {
+    const npmProjects = projects.filter(x=>x.downloads?.type == 'npm');
+
+    for(const project of npmProjects){
+      if(!project.downloads) continue;
+      
+      project.downloads.count = await getNPMDownloadCount(project.downloads?.name);
+      console.log("The count is", project.downloads.count);
+    }
+    
+    
+  }
+
   useEffect(() => {
+
+    fetchNPMDownloadCounts();
+
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY })
     }
@@ -65,6 +87,11 @@ export default function NordWestWebsite() {
       description: "A privacy-first, local-first AI chatbot application",
       tags: ["#Privacy", "#Local", "#Sustainability"],
       stars: 4,
+      downloads: {
+        type: '',
+        name: '',
+        count: 0
+      },
       githubUrl: "https://github.com/compass-ai-chat/compass",
       projectUrl: "https://compass-ai.chat"
     },
@@ -72,6 +99,11 @@ export default function NordWestWebsite() {
       title: "ollama-ai-provider-v2",
       description: "An package for the AI SDK that allows you to use locally running ollama models",
       tags: ["#LLM", "#Local", "#AI SDK"],
+      downloads: {
+        type: 'npm',
+        name: 'ollama-ai-provider-v2',
+        count: 0
+      },
       stars: 11,
       githubUrl: "https://github.com/nordwestt/ollama-ai-provider-v2",
       projectUrl: "https://www.npmjs.com/package/ollama-ai-provider-v2"
@@ -463,8 +495,15 @@ export default function NordWestWebsite() {
                       {project.title}
                     </h3>
                     <div className="flex items-center text-slate-400">
-                      <Star className="w-4 h-4 mr-1" />
-                      <span className="text-sm">{project.stars}</span>
+                      
+                      <div className="flex">
+                        <Star className="w-4 h-4 mr-1" />
+                        <span className="text-sm">{project.stars}</span>
+                      </div>
+                      {project.downloads && (<div className="flex ml-2">
+                        <DownloadIcon className="w-4 h-4 mr-1" />
+                        <span className="text-sm">{project.downloads?.count}</span>
+                      </div>)}
                     </div>
                   </div>
 
