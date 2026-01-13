@@ -401,13 +401,13 @@ export default function NordWestWebsite() {
           <div className="mb-16 relative pt-4">
             <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
               <span className="block chromatic-text rgb-glitch">
-                Building the future
+                Software
               </span>
               <span className="block text-emerald-400 rgb-glitch">
-                where nature and
+                built to last,
               </span>
               <span className="block text-purple-400 rgb-glitch">
-                technology thrive.
+                under your control.
               </span>
             </h1>
           </div>
@@ -415,7 +415,7 @@ export default function NordWestWebsite() {
           <p
             className={`text-xl md:text-2xl mb-16 max-w-2xl mx-auto leading-relaxed ${isDarkMode ? "text-slate-300" : "text-stone-600"}`}
           >
-            Generative AI & software systems from the alpine edge.
+            AI & software systems - designed for sovereignty.
           </p>
 
           <Button
@@ -445,7 +445,7 @@ export default function NordWestWebsite() {
                 </p>
                 <p className={isDarkMode ? "text-slate-300" : "text-stone-700"}>
                   I’m a full-stack software developer with hands-on experience in 
-                  machine learning and modern AI systems. 
+                  machine learning and local AI systems. 
                   I work with teams to integrate AI where it makes sense, 
                   without creating unnecessary dependencies, security risks, 
                   or compliance issues.
