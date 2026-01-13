@@ -11,8 +11,9 @@ import {
   Users,
   Shield,
   Leaf,
+  Castle,
   Globe2,
-  Heart,
+  Sailboat,
   DownloadIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -666,14 +667,11 @@ export default function NordWestWebsite() {
                 <p
                   className={`text-base md:text-lg leading-relaxed ${isDarkMode ? "text-slate-300" : "text-stone-700"}`}
                 >
-                  Like the enduring stone paths that have connected alpine
-                  villages for centuries, I aim to build software that stands
-                  the test of time—free from artificial expiration dates or
-                  remote kill switches. Each project is an opportunity to
-                  contribute to digital freedom and develop systems that truly
-                  empower users. I believe that meaningful innovation grows best
-                  in environments that encourage openness, collaboration, and
-                  technological independence.
+                  I design software systems to remain usable, operable, and under your control over time — without hidden dependencies, forced upgrades, or external kill switches.
+
+                  That means favoring open standards, open-source components, and architectures that can be understood and maintained by the teams who rely on them.
+
+                  Especially for AI and data-critical systems, independence is not an ideology — it’s a practical requirement for security, resilience, and long-term viability.
                 </p>
               </div>
             </div>
@@ -685,15 +683,15 @@ export default function NordWestWebsite() {
                 <div className="col-span-3 justify-self-center mb-8">
                   <ValueCard
                     icon={Globe2}
-                    title="Open Source"
+                    title="Open Source & Standards"
                     color="purple"
                     isDarkMode={isDarkMode}
                   />
                 </div>
                 <div className="col-span-1 justify-self-start">
                   <ValueCard
-                    icon={Leaf}
-                    title="Freedom & Independence"
+                    icon={Sailboat}
+                    title="Operational Independence"
                     color="emerald"
                     isDarkMode={isDarkMode}
                   />
@@ -709,8 +707,8 @@ export default function NordWestWebsite() {
                 </div>
                 <div className="col-span-1 justify-self-end">
                   <ValueCard
-                    icon={Heart}
-                    title="Community Power"
+                    icon={Castle}
+                    title="Resilient Architectures"
                     color="cyan"
                     isDarkMode={isDarkMode}
                   />
