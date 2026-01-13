@@ -409,8 +409,8 @@ export default function NordWestWebsite() {
           </svg>
         </div>
 
-        <div className="relative z-10 text-center max-w-4xl mx-auto">
-          <div className="mb-16 relative">
+        <div className="relative z-10 text-center max-w-4xl mx-auto pt-4">
+          <div className="mb-16 relative pt-4">
             <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
               <span className="block chromatic-text rgb-glitch">
                 Building the future
