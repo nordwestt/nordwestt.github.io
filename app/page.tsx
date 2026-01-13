@@ -169,7 +169,7 @@ export default function NordWestWebsite() {
       </div>
 
       {/* Theme Toggle Button */}
-      <button
+      {/* <button
         onClick={toggleTheme}
         className={`fixed top-6 right-6 z-50 p-3 rounded-full transition-all duration-300 ${
           isDarkMode
@@ -178,7 +178,7 @@ export default function NordWestWebsite() {
         } backdrop-blur-sm border ${isDarkMode ? "border-slate-700" : "border-stone-200"}`}
       >
         {isDarkMode ? "☀️" : "🌙"}
-      </button>
+      </button> */}
 
       {/* Company Name */}
       <div className="fixed top-6 left-6 z-50 group">
