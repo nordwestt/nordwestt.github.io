@@ -451,20 +451,22 @@ export default function NordWestWebsite() {
               </h2>
               <div className="space-y-6 text-lg leading-relaxed">
                 <p className={isDarkMode ? "text-slate-300" : "text-stone-700"}>
-                  Operating from high altitudes in the Italian Alps, I bridge
-                  the gap between cutting-edge AI technology and sustainable,
-                  ethical development practices.
+                  Operating from the Italian Alps, I help European organizations 
+                  design and build software systems they truly control — 
+                  from data and infrastructure to deployment and long-term maintenance.
                 </p>
                 <p className={isDarkMode ? "text-slate-300" : "text-stone-700"}>
-                  With deep expertise in generative AI, full-stack development,
-                  and open-source ecosystems, I help organizations build the
-                  future responsibly—where innovation serves both in the short
-                  and long term.
+                  I’m a full-stack software developer with hands-on experience in 
+                  machine learning and modern AI systems. 
+                  I work with teams to integrate AI where it makes sense, 
+                  without creating unnecessary dependencies, security risks, 
+                  or compliance issues.
                 </p>
                 <p className={isDarkMode ? "text-slate-300" : "text-stone-700"}>
-                  Every line of code is written with intention. Every AI model
-                  is trained with consideration. Every solution is crafted to
-                  last.
+                  My focus is on robust architectures, data sovereignty, 
+                  and systems that remain understandable, auditable, 
+                  and operable over time — even as vendors, regulations, 
+                  and geopolitical conditions change.
                 </p>
               </div>
             </div>
