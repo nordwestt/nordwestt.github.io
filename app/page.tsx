@@ -94,40 +94,28 @@ export default function NordWestWebsite() {
   const services = [
     {
       icon: Brain,
-      title: "AI/LLM Consulting",
+      title: "Sovereign AI Architecture & Deployment",
       description:
-        "Local-first AI solutions, self-hosted models, and vendor-independent architectures",
+        "Design and deployment of self-hosted and vendor-independent AI systems — from local LLMs to full production pipelines.",
     },
     {
       icon: Globe2,
-      title: "Professional Websites",
+      title: "Applied AI Integration",
       description:
-        "Multilingual, responsive web experiences built with open-source frameworks and modern standards",
+        "Integration of AI capabilities into existing products and workflows — with a focus on reliability, security, and long-term maintainability.",
     },
     {
       icon: Code,
-      title: "Cross-Platform Apps",
+      title: "Open-Source & Vendor Independence Strategy",
       description:
-        "Freedom-respecting mobile apps using React Native, empowering users across all devices",
+        "Helping organizations reduce dependency on proprietary platforms by designing open, auditable, and replaceable technology stacks.",
     },
     {
       icon: Shield,
-      title: "Backend Engineering",
+      title: "Technical Advisory for AI-Critical Systems",
       description:
-        "Robust, scalable servers with Node.js, Python, or .NET Core - always open-source, always independent",
-    },
-    {
-      icon: Users,
-      title: "Open-Source Strategy",
-      description:
-        "Breaking free from proprietary software, community building, and FOSS governance",
-    },
-    {
-      icon: Leaf,
-      title: "Technical Advisory",
-      description:
-        "Migrating from proprietary systems, open-source alternatives, and independence roadmaps",
-    },
+        "Technical advisory for teams building or operating AI-critical systems, where architecture decisions have long-term consequences.",
+    }
   ];
 
   const testimonials = [
