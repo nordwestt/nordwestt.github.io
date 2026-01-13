@@ -499,7 +499,7 @@ export default function NordWestWebsite() {
       </section>
 
       {/* Services Section */}
-      <section className="py-32 px-6 relative">
+      <section className="px-6 relative">
         {/* Drifting Clouds */}
         <div
           className={`absolute inset-0 overflow-hidden pointer-events-none ${isDarkMode ? "opacity-30" : "opacity-100"}`}
@@ -509,7 +509,7 @@ export default function NordWestWebsite() {
           <div className="cloud cloud-3">☁️</div>
         </div>
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-20 chromatic-text rgb-glitch">
+          <h2 className="text-4xl md:text-5xl font-bold text-center my-20 chromatic-text rgb-glitch">
             Services & Expertise
           </h2>
 
@@ -541,9 +541,9 @@ export default function NordWestWebsite() {
       </section>
 
       {/* Featured Projects */}
-      <section className="py-32 px-6 relative">
+      <section className="px-6 relative">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-20 chromatic-text rgb-glitch">
+          <h2 className="text-4xl md:text-5xl font-bold text-center my-20 chromatic-text rgb-glitch">
             Open Source Projects
           </h2>
 
@@ -618,9 +618,9 @@ export default function NordWestWebsite() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-32 px-6 relative">
+      <section className="px-6 relative">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 chromatic-text rgb-glitch">
+          <h2 className="text-4xl md:text-5xl font-bold text-center my-16 chromatic-text rgb-glitch">
             Client Voices
           </h2>
 
@@ -772,7 +772,7 @@ export default function NordWestWebsite() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-32 px-6 relative">
+      <section className="pb-32 px-6 relative">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 chromatic-text rgb-glitch">
             Let's Build Together
