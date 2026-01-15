@@ -35,20 +35,47 @@ export default function NordWestWebsite() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [projects, setProjects] = useState(projectsData);
 
+  const fetchWithTimeout = async (url: string, timeout: number = 3000) => {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), timeout);
+    
+    try {
+      const response = await fetch(url, { signal: controller.signal });
+      clearTimeout(timeoutId);
+      return response;
+    } catch (error) {
+      clearTimeout(timeoutId);
+      throw error;
+    }
+  };
+
+
   const getNPMDownloadCount = async (packageName: string) => {
-    let result = await fetch(
-      `${corsProxy}/https://api.npmjs.org/downloads/point/2025-01-01:2025-07-10/${packageName}`,
-    );
-    const resultJson = await result.json();
-    return resultJson.downloads;
+    try{
+      let result = await fetch(
+        `${corsProxy}/https://api.npmjs.org/downloads/point/2025-01-01:2027-01-01/${packageName}`,
+      );
+      const resultJson = await result.json();
+      return resultJson.downloads;
+    }
+    catch(error){
+      return -1;
+    }
+    
   };
 
   const getDockerDownloadCount = async (packageName: string) => {
-    let result = await fetch(
-      `${corsProxy}/https://hub.docker.com/v2/repositories/${packageName}`,
-    );
-    const resultJson = await result.json();
-    return resultJson.pull_count;
+    try{
+      let result = await fetchWithTimeout(
+        `${corsProxy}/https://hub.docker.com/v2/repositories/${packageName}`,
+      );
+      const resultJson = await result.json();
+      return resultJson.pull_count;
+    }
+    catch(error){
+      return -1;
+    }
+    
   };
 
   const getGitDownloadCount = async (packageName: string) => {
@@ -73,9 +100,10 @@ export default function NordWestWebsite() {
       if (!project.downloads || !downloadFetchers[project.downloads.type])
         continue;
 
-      project.downloads.count = await downloadFetchers[project.downloads.type](
+      const downloadCount = await downloadFetchers[project.downloads.type](
         project.downloads?.name,
       );
+      project.downloads.count = downloadCount != -1 ? downloadCount : project.downloads.count;
       console.log("The count is", project.downloads.count);
     }
     setProjects(projects);
@@ -124,19 +152,19 @@ export default function NordWestWebsite() {
       quote:
         "With his expertise our process was automated and the time was reduced from about 5 minutes to 20-30 seconds",
       author: "Collectia A/S",
-      role: "Chief of Development, Karina Achton",
+      role: "Chief of Development, Karina",
     },
     {
       quote:
-        "The open-source approach and sustainable mindset made all the difference in our project's success.",
+        "His ability to quickly adapt and deliver solutions was impressive.",
       author: "Leonardo",
-      role: "Chief Software Engineer, Michael Black",
+      role: "Chief Software Engineer, Michael",
     },
     {
       quote:
-        "Rare combination of deep technical knowledge and genuine care for his work.",
+        "Rare combination of deep technical knowledge and high-level problem solving skills.",
       author: "CardLab ApS",
-      role: "CEO, Frank Sandeløv",
+      role: "CEO, Frank",
     },
   ];
 
