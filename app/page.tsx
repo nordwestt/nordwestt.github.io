@@ -9,6 +9,7 @@ import {
   Code,
   Brain,
   Users,
+  User,
   Shield,
   Leaf,
   Castle,
@@ -833,9 +834,18 @@ export default function NordWestWebsite() {
               <h3
                 className={`text-2xl font-semibold mb-6 ${isDarkMode ? "text-purple-400" : "text-purple-600"}`}
               >
-                Direct Contact
+                About Me
               </h3>
-              <div className="space-y-4">
+              <div className="space-y-5">
+                <div className="flex items-center">
+                  <User
+                    className={`w-5 h-5 mr-3 ${isDarkMode ? "text-emerald-400" : "text-emerald-600"}`}
+                  />
+                  <span
+                    className={isDarkMode ? "text-white" : "text-stone-800"}
+                  >Thomas Nordentoft, Danish
+                  </span>
+                </div>
                 <div className="flex items-center">
                   <Mail
                     className={`w-5 h-5 mr-3 ${isDarkMode ? "text-emerald-400" : "text-emerald-600"}`}
@@ -847,6 +857,29 @@ export default function NordWestWebsite() {
                   </span>
                 </div>
                 <div className="flex items-center">
+                  <Github
+                    className={`w-5 h-5 mr-3 ${isDarkMode ? "text-emerald-400" : "text-emerald-600"}`}
+                  />
+                  <a 
+                    href="https://github.com/nordwestt" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className={`${isDarkMode ? "text-white hover:text-emerald-400" : "text-stone-800 hover:text-emerald-600"} transition-colors duration-200`}
+                  >
+                    github.com/nordwestt
+                  </a>
+                </div>
+                <div className="flex items-center">
+                  <Brain
+                    className={`w-5 h-5 mr-3 ${isDarkMode ? "text-emerald-400" : "text-emerald-600"}`}
+                  />
+                  <span
+                    className={isDarkMode ? "text-white" : "text-stone-800"}
+                  >
+                    M.Eng. Electronic & Software Engineering
+                  </span>
+                </div>
+                <div className="flex items-center">
                   <MapPin
                     className={`w-5 h-5 mr-3 ${isDarkMode ? "text-emerald-400" : "text-emerald-600"}`}
                   />
@@ -854,6 +887,16 @@ export default function NordWestWebsite() {
                     className={isDarkMode ? "text-white" : "text-stone-800"}
                   >
                     Operating from the Italian Alps
+                  </span>
+                </div>
+                <div className="flex items-center">
+                  <Star
+                    className={`w-5 h-5 mr-3 ${isDarkMode ? "text-emerald-400" : "text-emerald-600"}`}
+                  />
+                  <span
+                    className={isDarkMode ? "text-white" : "text-stone-800"}
+                  >
+                    Independent consultant since 2019
                   </span>
                 </div>
               </div>
