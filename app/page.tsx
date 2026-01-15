@@ -35,6 +35,16 @@ export default function NordWestWebsite() {
     setIsDarkMode(!isDarkMode);
   };
 
+  const handleScrollToContact = () => {
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start' 
+      });
+    }
+  };
+
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [projects, setProjects] = useState(projectsData);
 
@@ -443,7 +453,7 @@ export default function NordWestWebsite() {
 
           <Button
             size="lg"
-            className={`mossy-rock-button periodic-shimmer text-white px-8 py-4 text-lg font-semibold ${isDarkMode ? "hover:text-emerald-200" : "hover:text-emerald-50"}`}
+            className={`mossy-rock-button periodic-shimmer text-white px-8 py-4 text-lg font-semibold ${isDarkMode ? "hover:text-emerald-200" : "hover:text-emerald-50"}`} onClick={handleScrollToContact}
           >
             Schedule a Consultation
           </Button>
@@ -789,7 +799,7 @@ export default function NordWestWebsite() {
           </h2>
 
           <div className="grid md:grid-cols-2 gap-12">
-            <div>
+            <div id="contact-form">
               <h3
                 className={`text-2xl font-semibold mb-6 ${isDarkMode ? "text-emerald-400" : "text-emerald-600"}`}
               >
