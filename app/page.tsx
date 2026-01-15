@@ -232,9 +232,10 @@ export default function NordWestWebsite() {
       
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-6">
+      <section className="relative min-h-screen flex flex-col px-6">
+        
         <div className="absolute inset-0 hero-background" />
-
+        <CompanyName isDarkMode={isDarkMode} />
         {/* ML Mountain Visualization */}
         <div className="absolute bottom-0 left-0 right-0 z-5 mb-8">
           <svg viewBox="0 0 1200 300" className="w-full h-auto">
@@ -436,7 +437,7 @@ export default function NordWestWebsite() {
         </div>
 
         <div className="relative z-10 text-center max-w-4xl mx-auto pt-4 flex flex-col">
-        <CompanyName isDarkMode={isDarkMode} />
+        
           
           <div className="mb-16 relative pt-4">
             <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">

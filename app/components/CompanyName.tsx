@@ -2,7 +2,7 @@
 
 export function CompanyName({ isDarkMode }: { isDarkMode: boolean }) {
     return (
-        <div className="ml-auto">
+        <div className="mr-auto z-10 mr-auto mt-4">
           <h1
             className={`text-3xl font-bold tracking-wider transition-all duration-500
               ${
