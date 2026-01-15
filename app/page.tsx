@@ -22,6 +22,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { ValueCard } from "./components/ValueCard";
 import { projects as projectsData } from "./data/projects.data";
+import { CompanyName } from "./components/CompanyName";
 
 export default function NordWestWebsite() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -211,29 +212,7 @@ export default function NordWestWebsite() {
       </button> */}
 
       {/* Company Name */}
-      <div className="fixed top-6 left-6 z-50 group">
-        <div className="relative">
-          <h1
-            className={`text-3xl font-bold tracking-wider transition-all duration-500
-              ${
-                isDarkMode
-                  ? "text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-emerald-400 group-hover:via-cyan-400 group-hover:to-purple-400"
-                  : "text-stone-800 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-emerald-600 group-hover:via-cyan-600 group-hover:to-purple-600"
-              }`}
-          >
-            ⟨ Nord<span className="text-emerald-400">West</span>T /⟩
-          </h1>
-          <div
-            className={`absolute -bottom-2 left-0 w-0 h-0.5
-            ${
-              isDarkMode
-                ? "bg-gradient-to-r from-emerald-400 via-cyan-400 to-purple-400"
-                : "bg-gradient-to-r from-emerald-600 via-cyan-600 to-purple-600"
-            }
-            group-hover:w-full transition-all duration-500`}
-          ></div>
-        </div>
-      </div>
+      
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-6">
@@ -439,7 +418,9 @@ export default function NordWestWebsite() {
           </svg>
         </div>
 
-        <div className="relative z-10 text-center max-w-4xl mx-auto pt-4">
+        <div className="relative z-10 text-center max-w-4xl mx-auto pt-4 flex flex-col">
+        <CompanyName isDarkMode={isDarkMode} />
+          
           <div className="mb-16 relative pt-4">
             <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
               <span className="block chromatic-text rgb-glitch">
