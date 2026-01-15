@@ -25,6 +25,8 @@ import { projects as projectsData } from "./data/projects.data";
 
 export default function NordWestWebsite() {
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const [visitorName, setVisitorName] = useState("");
+  const [message, setMessage] = useState("");
   const corsProxy =
     "https://workers-playground-delicate-bread-86d5.thomas-180.workers.dev";
 
@@ -107,6 +109,17 @@ export default function NordWestWebsite() {
       console.log("The count is", project.downloads.count);
     }
     setProjects(projects);
+  };
+
+  const handleSendMessage = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    const emailSubject = "Project Inquiry from " + (visitorName || "Website Visitor");
+    const emailBody = message + "\n\nKind regards,\n" + (visitorName || "Anonymous");
+    
+    const mailtoUrl = `mailto:thomas@nordentoft.dk?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+    
+    window.location.href = mailtoUrl;
   };
 
   useEffect(() => {
@@ -801,28 +814,25 @@ export default function NordWestWebsite() {
               >
                 Get in Touch
               </h3>
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSendMessage}>
                 <div>
                   <Input
                     placeholder="Your Name"
-                    className={`${isDarkMode ? "bg-slate-800/50 border-slate-600 text-white placeholder-slate-400" : "bg-white/90 border-stone-300 text-stone-800 placeholder-stone-500"} backdrop-blur-sm`}
-                  />
-                </div>
-                <div>
-                  <Input
-                    type="email"
-                    placeholder="your@email.com"
+                    value={visitorName}
+                    onChange={(e) => setVisitorName(e.target.value)}
                     className={`${isDarkMode ? "bg-slate-800/50 border-slate-600 text-white placeholder-slate-400" : "bg-white/90 border-stone-300 text-stone-800 placeholder-stone-500"} backdrop-blur-sm`}
                   />
                 </div>
                 <div>
                   <Textarea
                     placeholder="Tell me about your project..."
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
                     rows={5}
                     className={`${isDarkMode ? "bg-slate-800/50 border-slate-600 text-white placeholder-slate-400" : "bg-white/90 border-stone-300 text-stone-800 placeholder-stone-500"} backdrop-blur-sm`}
                   />
                 </div>
-                <Button className="w-full bg-gradient-to-r from-emerald-600 to-purple-600 hover:from-emerald-500 hover:to-purple-500 text-white">
+                <Button type="submit" className="w-full bg-gradient-to-r from-emerald-600 to-purple-600 hover:from-emerald-500 hover:to-purple-500 text-white">
                   Send Message
                 </Button>
               </form>
@@ -842,7 +852,7 @@ export default function NordWestWebsite() {
                   <span
                     className={isDarkMode ? "text-white" : "text-stone-800"}
                   >
-                    hello@nordwestt.com
+                    thomas@nordentoft.dk
                   </span>
                 </div>
                 <div className="flex items-center">
@@ -857,7 +867,7 @@ export default function NordWestWebsite() {
                 </div>
               </div>
 
-              <div
+              {/* <div
                 className={`mt-8 p-6 ${
                   isDarkMode
                     ? "bg-slate-800/30 border-slate-700/50"
@@ -885,7 +895,7 @@ export default function NordWestWebsite() {
                 >
                   Open Calendar
                 </Button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
