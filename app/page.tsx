@@ -73,7 +73,7 @@ export default function NordWestWebsite() {
       return resultJson.downloads;
     }
     catch(error){
-      return -1;
+      return undefined;
     }
     
   };
@@ -87,20 +87,25 @@ export default function NordWestWebsite() {
       return resultJson.pull_count;
     }
     catch(error){
-      return -1;
+      return undefined;
     }
     
   };
 
   const getGitDownloadCount = async (packageName: string) => {
-    let result = await fetch(
-      `${corsProxy}/https://api.github.com/repos/${packageName}/releases?page=1&per_page=5`,
-    );
-    const resultJson = await result.json();
-    return resultJson
-      .map((x: any) => x.assets.map((y: any) => y.download_count))
-      .flat()
-      .reduce((x: number, y: number) => x + y);
+    try{
+      let result = await fetch(
+        `${corsProxy}/https://api.github.com/repos/${packageName}/releases?page=1&per_page=5`,
+      );
+      const resultJson = await result.json();
+      return resultJson
+        .map((x: any) => x.assets.map((y: any) => y.download_count))
+        .flat()
+        .reduce((x: number, y: number) => x + y);
+    }
+    catch(error){
+      return undefined;
+    }
   };
 
   const fetchDownloadCounts = async () => {
@@ -117,7 +122,8 @@ export default function NordWestWebsite() {
       const downloadCount = await downloadFetchers[project.downloads.type](
         project.downloads?.name,
       );
-      project.downloads.count = downloadCount != -1 ? downloadCount : project.downloads.count;
+      project.downloads.count = downloadCount != undefined ? downloadCount : project.downloads.count;
+      await new Promise((resolve) => setTimeout(resolve, 500));
       console.log("The count is", project.downloads.count);
     }
     setProjects(projects);
@@ -843,7 +849,7 @@ export default function NordWestWebsite() {
                   />
                   <span
                     className={isDarkMode ? "text-white" : "text-stone-800"}
-                  >Thomas Nordentoft, Danish
+                  >Thomas Nordentoft, M.Eng. Electronic & Software Engineering
                   </span>
                 </div>
                 <div className="flex items-center">
@@ -869,7 +875,7 @@ export default function NordWestWebsite() {
                     github.com/nordwestt
                   </a>
                 </div>
-                <div className="flex items-center">
+                {/* <div className="flex items-center">
                   <Brain
                     className={`w-5 h-5 mr-3 ${isDarkMode ? "text-emerald-400" : "text-emerald-600"}`}
                   />
@@ -878,7 +884,7 @@ export default function NordWestWebsite() {
                   >
                     M.Eng. Electronic & Software Engineering
                   </span>
-                </div>
+                </div> */}
                 <div className="flex items-center">
                   <MapPin
                     className={`w-5 h-5 mr-3 ${isDarkMode ? "text-emerald-400" : "text-emerald-600"}`}
