@@ -235,7 +235,15 @@ export default function NordWestWebsite() {
       <section className="relative min-h-screen flex flex-col px-6">
         
         <div className="absolute inset-0 hero-background" />
+        <div className="flex items-center">
         <CompanyName isDarkMode={isDarkMode} />
+        <a href="https://github.com/nordwestt" target="_blank" 
+          rel="noopener noreferrer" className={`z-10 ${isDarkMode ? "text-white hover:text-emerald-400" : "text-stone-800 hover:text-emerald-600"} transition-colors duration-200`}>
+        <Github href="https://github.com/nordwestt" className={`w-5 z-10 h-5 mr-3 ${isDarkMode ? "text-emerald-400" : "text-emerald-600"}`}/> 
+        </a>
+
+        </div>
+
         {/* ML Mountain Visualization */}
         <div className="absolute bottom-0 left-0 right-0 z-5 mb-8">
           <svg viewBox="0 0 1200 300" className="w-full h-auto">
