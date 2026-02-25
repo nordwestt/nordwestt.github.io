@@ -1,0 +1,5 @@
+{
+  "m.homeserver": {
+    "base_url": "https://matrix.nordwestt.com:443"
+  }
+}
