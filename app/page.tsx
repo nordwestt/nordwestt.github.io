@@ -600,22 +600,6 @@ export default function NordWestWebsite() {
                     >
                       {project.title}
                     </h3>
-                    <div className="flex items-center text-slate-400">
-                      {project.downloads && (
-                        <div className="flex ml-2">
-                          <DownloadIcon className="w-4 h-4 mr-1" />
-                          {!project.downloads.count && (
-                            <div className="animate-spin w-4 h-4 border-2 border-slate-400 border-t-transparent rounded-full" />
-                          )}
-
-                          {project.downloads.count && (
-                            <span className="text-sm">
-                              {project.downloads?.count}
-                            </span>
-                          )}
-                        </div>
-                      )}
-                    </div>
                   </div>
 
                   <p
@@ -642,10 +626,14 @@ export default function NordWestWebsite() {
                     onClick={(e) => e.stopPropagation()}
                     className={`mt-2 flex items-center hover:text-white transition-colors ${isDarkMode ? "text-slate-400" : "text-stone-500"}`}
                   >
-                    <div className="flex mr-2">
-                      <Star className="w-4 h-4 mr-1" />
-                      <span className="text-sm">{project.stars}</span>
-                    </div>
+                    {project.downloads && (
+                      <div className="flex mr-4">
+                        <DownloadIcon className="w-4 h-4 mr-1" />
+                        <span className="text-sm">
+                          {project.downloads?.count || "..."}
+                        </span>
+                      </div>
+                    )}
                     <Github className="w-4 h-4 mr-2" />
                     <span className="text-sm">View on GitHub</span>
                   </a>
